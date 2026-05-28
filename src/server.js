@@ -17,5 +17,3 @@ app.use("/", routes);
 app.listen(port, () => {
   console.log(`Server running at http://${host}:${port}`);
 });
-
-/

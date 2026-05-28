@@ -6,8 +6,35 @@
 //   { files: ["**/*.{js,mjs,cjs}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.browser } },
 // ]);
 
+/**  Linter DICODING ACADEMY  */
+// import globals from "globals";
+// import pluginJs from "@eslint/js";
+// import daStyle from "eslint-config-dicodingacademy";
+
+// export default [daStyle, {
+//     files: ["**/*.js"],
+//     languageOptions: { sourceType: "module" } },
+//     { languageOptions: { globals: globals.node } },
+//     pluginJs.configs.recommended];
+
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import daStyle from "eslint-config-dicodingacademy";
 
-export default [daStyle, { files: ["**/*.js"], languageOptions: { sourceType: "module" } }, { languageOptions: { globals: globals.node } }, pluginJs.configs.recommended];
+export default [
+  daStyle,
+  {
+    files: ["**/*.js"],
+    languageOptions: { sourceType: "module" },
+  },
+  {
+    languageOptions: { globals: globals.node },
+  },
+  pluginJs.configs.recommended,
+
+  {
+    rules: {
+      "linebreak-style": "off",
+    },
+  },
+];
