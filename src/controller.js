@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import notes from "../src/notes.js";
+
 export const createNote = (req, res, next) => {
   const { title = "untitled", tags, body } = req.body;
   const id = nanoid(16);
@@ -21,6 +22,13 @@ export const createNote = (req, res, next) => {
   return res.status(500).json({
     status: "fail",
     message: "Catatan gagal ditambahkan",
+  });
+};
+
+export const getNotes = (req, res) => {
+  return res.json({
+    status: "success",
+    data: { notes },
   });
 };
 
